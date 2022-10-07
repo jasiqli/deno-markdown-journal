@@ -1,0 +1,199 @@
+:root {
+  --fg1: 30 30 30;
+  --fg2: 46 46 46;
+  --bg: 250 250 250;
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --fg1: 252 252 252;
+    --fg2: 250 250 250;
+    --bg: 30 30 30;
+  }
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 100%;
+  background-color: rgba(var(--bg) / 1.0);
+}
+h1 {
+  font-weight: normal;
+  font-size: 8rem;
+  line-height: 150%;
+  color: rgba(var(--fg1) / 1.0);
+}
+h2 {
+  font-size: 6rem;
+  color: rgba(var(--fg1) / 1.0);
+}
+a {
+  color: rgba(var(--fg1) / 0.85);
+}
+a:hover,
+a:focus,
+a:active {
+  outline: none;
+  text-decoration: dashed underline;
+  color: rgba(var(--fg1) / 1.0);
+}
+p,
+li,
+dt,
+dd,
+label,
+nav {
+  font-size: 4rem;
+  line-height: 150%;
+  color: rgba(var(--fg2) / 1.0);
+}
+dt {
+  color: rgba(var(--fg1) / 1.0);
+  font-weight: 600;
+}
+dd {
+  margin-bottom: 4rem;
+}
+code {
+  font-family: monospace;
+  font-size: 3rem;
+}
+header,
+main,
+footer {
+  width: 90vw;
+  max-width: 1200px;
+}
+main {
+  margin: 6rem auto;
+}
+header {
+  margin: 6rem auto 0;
+}
+footer {
+  margin: 4rem auto;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 4.5rem;
+  }
+  p,
+  li,
+  dt,
+  dd,
+  label,
+  nav {
+    font-size: 3rem;
+  }
+  code {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  p,
+  li,
+  dt,
+  dd,
+  label,
+  nav {
+    font-size: 2rem;
+  }
+  code {
+    font-size: 2rem;
+  }
+}
+.a11y-nav {
+  position: fixed;
+  z-index: 100;
+  padding: 1rem;
+  width: 100px;
+}
+.a11y-nav.top {
+  top: -3rem;
+}
+.a11y-nav.bot {
+  bottom: -10rem;
+}
+.a11y-nav a {
+  position: absolute;
+}
+.a11y-nav.top a:focus {
+  top: 4rem;
+}
+.a11y-nav.bot a:focus {
+  bottom: 12rem;
+}
+#contact {
+  margin: 6rem auto;
+}
+input,
+textarea,
+button {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+}
+button {
+  margin-left: 0.5rem;
+  margin-top: 2rem;
+  padding:1rem 1.5rem;
+}
+input::placeholder,
+input::-moz-placeholder,
+input::-webkit-input-placeholder,
+textarea::placeholder,
+textarea::-moz-placeholder,
+textarea::-webkit-input-placeholder {
+  color: rgba(var(--fg1) / 0.85);
+}
+label,
+input,
+textarea,
+label span {
+  display: block;
+  padding: 0.5rem;
+  width: calc(100% - 1rem - 4px);
+}
+input,
+textarea,
+button {
+  background-color: rgba(var(--bg) / 1);
+  border: 2px solid rgba(var(--fg2) / 1.0);
+  color: rgba(var(--fg1) / 1.0);
+}
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  border-style: dashed;
+}
+textarea {
+  height: 200px;
+}
+button:hover,
+button:active {
+  border: 2px solid rgba(var(--fg1) / 1.0);
+  background-color: rgba(var(--fg1) / 1.0);
+  color: rgba(var(--bg) / 1.0)
+}
+@media screen and (max-width: 1024px) {
+  input,
+  textarea,
+  button {
+    font-size: 2.25rem
+  }
+}
+@media screen and (max-width: 600px) {
+  input,
+  textarea,
+  button {
+    font-size: 1.5rem
+  }
+}
