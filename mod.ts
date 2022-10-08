@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 import { Marked } from "https://deno.land/x/markdown@v2.0.0/mod.ts";
 // https://reactgo.com/deno-check-file-exists/
-import { existsSync } from "https://deno.land/std/fs/mod.ts";
+import { exists } from "https://deno.land/std/fs/mod.ts";
 
 const navBar = `<nav><a href="/" title="Homepage" accesskey="h">Home</a></nav>`
 
@@ -15,7 +15,7 @@ const pageTemplate = (title: String, content: String, isNotFound: Boolean = fals
     <link referrerpolicy="no-referrer">
     <meta name="referrer" content="no-referrer">
     <meta name="description" content="A Markdown blog on Deno.">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body id="top">
@@ -83,7 +83,7 @@ async function handleRequest(request: Request): Promise<Response> {
 
     const filename = `./post/${postMatch.pathname.groups.name}.md`
 
-    if (existsSync(filename)) {
+    if (await exists(filename)) {
       const fileContent = await Deno.readFile(filename)
       const decoder = new TextDecoder("utf-8");
       const markdown = decoder.decode(fileContent);
